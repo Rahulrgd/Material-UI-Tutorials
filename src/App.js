@@ -7,10 +7,10 @@ import {
   Tabs,
   Tab,
 } from "@mui/material";
-import logo from "./logo.svg";
 import Form from "./component/Form";
 import { useState } from "react";
-import Cards from "./component/Cards";
+// import Cards from "./component/Cards";
+import Models from "./component/Models";
 
 function App() {
   const [values, setValues] = useState(0);
@@ -35,7 +35,8 @@ function App() {
         </Toolbar>
       </AppBar>
       <div style={{marginTop:100}}>
-        <Cards/>
+        {/* <Cards/> */}
+        <Models/>
       </div>
     </div>
   );
