@@ -5,6 +5,10 @@ import {
   FormGroup,
   FormControlLabel,
   Checkbox,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import React, { useState } from "react";
 
@@ -14,6 +18,7 @@ function Form() {
     email: "",
     password: "",
     terms: false,
+    courses: "",
   });
 
   const handleChange = (e) => {
@@ -71,6 +76,22 @@ function Form() {
           />
         </FormGroup>
         <br />
+        <FormControl fullWidth>
+          <InputLabel id="menu">Courses</InputLabel>
+          <Select
+            labelId="menu"
+            id="menu-list"
+            label="courses"
+            value={inputs.courses}
+            onChange={handleChange}
+            name="courses"
+          >
+            <MenuItem value={"mongodb"}>Mongodb</MenuItem>
+            <MenuItem value={"express"}>Express</MenuItem>
+            <MenuItem value={"node"}>Node</MenuItem>
+            <MenuItem value={"react"}>React</MenuItem>
+          </Select>
+        </FormControl>
         <Button type="submit">Submit</Button>
       </form>
     </>
