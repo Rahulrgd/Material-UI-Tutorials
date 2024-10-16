@@ -1,4 +1,11 @@
-import { Button, TextField } from "@mui/material";
+import { CheckBox } from "@mui/icons-material";
+import {
+  Button,
+  TextField,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+} from "@mui/material";
 import React, { useState } from "react";
 
 function Form() {
@@ -6,19 +13,20 @@ function Form() {
     name: "",
     email: "",
     password: "",
+    terms: false,
   });
 
-  const handleChange = (e)=>{
-    setInputs(prevState =>({
-        ...prevState,
-        [e.target.name]:[e.target.value]
-    }))
-  }
+  const handleChange = (e) => {
+    setInputs((prevState) => ({
+      ...prevState,
+      [e.target.name]: [e.target.value],
+    }));
+  };
 
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-    console.log(inputs)
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(inputs);
+  };
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -49,6 +57,20 @@ function Form() {
           variant="outlined"
           sx={{ margin: "10px" }}
         />
+        <br />
+        <FormGroup sx={{ margin: "10px" }}>
+          <FormControlLabel
+            label="I Agree T&C"
+            control={<CheckBox />}
+            onChange={() => {
+              setInputs((prevState) => ({
+                ...prevState,
+                terms: !inputs.terms,
+              }));
+            }}
+          />
+        </FormGroup>
+        <br />
         <Button type="submit">Submit</Button>
       </form>
     </>
