@@ -9,6 +9,9 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  FormLabel,
+  RadioGroup,
+  Radio,
 } from "@mui/material";
 import React, { useState } from "react";
 
@@ -19,6 +22,7 @@ function Form() {
     password: "",
     terms: false,
     courses: "",
+    gender: "",
   });
 
   const handleChange = (e) => {
@@ -92,6 +96,26 @@ function Form() {
             <MenuItem value={"react"}>React</MenuItem>
           </Select>
         </FormControl>
+        <FormControl>
+          <FormLabel>Gender</FormLabel>
+          <RadioGroup
+            name="gender"
+            onChange={handleChange}
+          >
+            <FormControlLabel value={"male"} label="Male" control={<Radio />} />
+            <FormControlLabel
+              value={"female"}
+              label="Female"
+              control={<Radio />}
+            />
+            <FormControlLabel
+              value={"other"}
+              label="Other"
+              control={<Radio />}
+            />
+          </RadioGroup>
+        </FormControl>
+        <br />
         <Button type="submit">Submit</Button>
       </form>
     </>
