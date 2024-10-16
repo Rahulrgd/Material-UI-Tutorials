@@ -13,6 +13,7 @@ import { useState } from "react";
 import Models from "./component/Models";
 import Containers from "./component/Containers";
 import ListComponents from "./component/ListComponents";
+import Accord from "./component/Accord";
 
 function App() {
   const [values, setValues] = useState(0);
@@ -40,7 +41,8 @@ function App() {
         {/* <Cards/> */}
         {/* <Models/> */}
         {/* <Containers/> */}
-        <ListComponents/>
+        {/* <ListComponents/> */}
+        <Accord/>
       </div>
     </div>
   );
