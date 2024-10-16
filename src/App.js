@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
 import logo from "./logo.svg";
 
 function App() {
@@ -16,6 +16,13 @@ function App() {
       <Button variant="contained" color="success" sx={{margin: "10"}}>Click Me</Button>
       <Button variant="text" onClick={()=>alert("You Clicked")}>Click Me</Button>
       <Button variant="outline" size="large">Click Me</Button>
+
+      {/* Text Filed Tutorial */}
+      <br />
+      <br />
+      <TextField type="text" placeholder="name" variant="standard" sx={{margin:"30px"}}/>
+      <TextField type="text" placeholder="name" variant="outlined" sx={{margin:"30px"}}/>
+      <TextField type="text" placeholder="name" variant="filled" sx={{margin:"30px"}}/>
     </div>
   );
 }
