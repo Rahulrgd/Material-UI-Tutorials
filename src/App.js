@@ -1,17 +1,36 @@
-import { Button, TextField, Typography, AppBar, Toolbar } from "@mui/material";
+import {
+  Button,
+  TextField,
+  Typography,
+  AppBar,
+  Toolbar,
+  Tabs,
+  Tab,
+} from "@mui/material";
 import logo from "./logo.svg";
 import Form from "./component/Form";
+import { useState } from "react";
 
 function App() {
+  const [values, setValues] = useState(0);
+
   return (
     <div>
       {/* <Form/> */}
       <AppBar>
         <Toolbar>
           <Typography variant="h5">LOGO</Typography>
-          <Button variant="contained" color="success" sx={{marginLeft:"10px"}}>
-            SignIN
-          </Button>
+          <Tabs
+            sx={{ marginLeft: "auto" }}
+            value={values}
+            onChange={(e,val)=>setValues(val)}
+            textColor="inherit"
+            indicatorColor="secondary"
+          >
+            <Tab label="Home" />
+            <Tab label="About" />
+            <Tab label="Contact" />
+          </Tabs>
         </Toolbar>
       </AppBar>
     </div>
