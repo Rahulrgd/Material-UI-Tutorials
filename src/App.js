@@ -12,6 +12,7 @@ import { useState } from "react";
 // import Cards from "./component/Cards";
 import Models from "./component/Models";
 import Containers from "./component/Containers";
+import ListComponents from "./component/ListComponents";
 
 function App() {
   const [values, setValues] = useState(0);
@@ -38,7 +39,8 @@ function App() {
       <div style={{marginTop:100}}>
         {/* <Cards/> */}
         {/* <Models/> */}
-        <Containers/>
+        {/* <Containers/> */}
+        <ListComponents/>
       </div>
     </div>
   );
