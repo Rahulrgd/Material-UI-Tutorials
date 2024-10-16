@@ -1,9 +1,11 @@
 import {
+    Alert,
   Button,
   Drawer,
   List,
   ListItemButton,
   ListItemText,
+  Snackbar,
 } from "@mui/material";
 import React, { useState } from "react";
 
@@ -26,6 +28,10 @@ function DrawerMenu() {
           })}
         </List>
       </Drawer>
+      <br />
+      <Snackbar open={true} message="This is Snackbar" autoHideDuration={2000}>
+        <Alert severity="success">This is Alert in Snackbar</Alert>
+      </Snackbar>
     </div>
   );
 }
