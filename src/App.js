@@ -10,6 +10,7 @@ import {
 import logo from "./logo.svg";
 import Form from "./component/Form";
 import { useState } from "react";
+import Cards from "./component/Cards";
 
 function App() {
   const [values, setValues] = useState(0);
@@ -33,6 +34,9 @@ function App() {
           </Tabs>
         </Toolbar>
       </AppBar>
+      <div style={{marginTop:100}}>
+        <Cards/>
+      </div>
     </div>
   );
 }
