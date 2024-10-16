@@ -1,7 +1,20 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
-import React from "react";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Typography,
+} from "@mui/material";
+import React, { useState } from "react";
 
 function Cards() {
+  const [open, setOpen] = useState(false);
   return (
     <div>
       <Card sx={{ maxWidth: 300 }}>
@@ -16,13 +29,32 @@ function Cards() {
             Web Design
           </Typography>
           <Typography variant="body2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab enim maxime, dolorum libero commodi excepturi repudiandae consequuntur aperiam hic recusandae.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab enim
+            maxime, dolorum libero commodi excepturi repudiandae consequuntur
+            aperiam hic recusandae.
           </Typography>
           <CardActions>
-            <Button size="small" color="primary">Share</Button>
+            <Button size="small" color="primary">
+              Share
+            </Button>
+            <Button size="small" color="primary" onClick={()=>setOpen(true)}>
+              Delete
+            </Button>
           </CardActions>
         </CardContent>
       </Card>
+      <Dialog open={open} onClose={()=>setOpen(false)}>
+        <DialogTitle>Are You Sure</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            are you sure to delete this products?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={()=>setOpen(false)}>Cancel</Button>
+          <Button onClick={()=>setOpen(false)}>Delete</Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }
