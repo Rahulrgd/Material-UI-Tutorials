@@ -1,5 +1,5 @@
 import {
-    Alert,
+  Alert,
   Button,
   CircularProgress,
   Drawer,
@@ -7,13 +7,16 @@ import {
   List,
   ListItemButton,
   ListItemText,
+  Rating,
   Snackbar,
+  Typography,
 } from "@mui/material";
 import React, { useState } from "react";
 
 function DrawerMenu() {
   const [open, setOpen] = useState(false);
   const courses = ["react", "nodejs", "mern", "java", "Spring boot"];
+  const [value, setValue] = useState();
   return (
     <div>
       <Button variant="contained" onClick={() => setOpen(true)}>
@@ -35,9 +38,13 @@ function DrawerMenu() {
         <Alert severity="success">This is Alert in Snackbar</Alert>
       </Snackbar>
       <br />
-      <CircularProgress color="secondary"  value={75} />
+      <CircularProgress color="secondary" value={75} />
       <br />
-      <LinearProgress/>
+      <LinearProgress />
+      <Rating value={value} onChange={(e, val) => setValue(val)} size="large" precision={0.5}/>
+        <Typography>
+            Rated {value !== undefined?value:0} stars
+        </Typography>
     </div>
   );
 }
