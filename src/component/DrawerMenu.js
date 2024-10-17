@@ -1,7 +1,9 @@
 import {
     Alert,
   Button,
+  CircularProgress,
   Drawer,
+  LinearProgress,
   List,
   ListItemButton,
   ListItemText,
@@ -32,6 +34,10 @@ function DrawerMenu() {
       <Snackbar open={true} message="This is Snackbar" autoHideDuration={2000}>
         <Alert severity="success">This is Alert in Snackbar</Alert>
       </Snackbar>
+      <br />
+      <CircularProgress color="secondary"  value={75} />
+      <br />
+      <LinearProgress/>
     </div>
   );
 }
