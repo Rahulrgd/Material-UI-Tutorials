@@ -1,4 +1,5 @@
 import {
+  IconButton,
   Alert,
   Button,
   CircularProgress,
@@ -11,6 +12,7 @@ import {
   Snackbar,
   Typography,
 } from "@mui/material";
+import AddReactionIcon from "@mui/icons-material/AddReaction";
 import React, { useState } from "react";
 
 function DrawerMenu() {
@@ -41,10 +43,17 @@ function DrawerMenu() {
       <CircularProgress color="secondary" value={75} />
       <br />
       <LinearProgress />
-      <Rating value={value} onChange={(e, val) => setValue(val)} size="large" precision={0.5}/>
-        <Typography>
-            Rated {value !== undefined?value:0} stars
-        </Typography>
+      <Rating
+        value={value}
+        onChange={(e, val) => setValue(val)}
+        size="large"
+        precision={0.5}
+      />
+      <Typography>Rated {value !== undefined ? value : 0} stars</Typography>
+      <br />
+      <IconButton onClick={()=>alert("Icon BTN")}>
+        <AddReactionIcon color="secondary"/>
+      </IconButton>
     </div>
   );
 }
