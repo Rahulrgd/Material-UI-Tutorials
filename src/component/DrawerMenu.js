@@ -49,11 +49,12 @@ function DrawerMenu() {
         size="large"
         precision={0.5}
       />
-      <Typography>Rated {value !== undefined ? value : 0} stars</Typography>
+      {/* <Typography>Rated {value !== undefined ? value : 0} stars</Typography>
       <br />
       <IconButton onClick={()=>alert("Icon BTN")}>
         <AddReactionIcon color="secondary"/>
-      </IconButton>
+      </IconButton> */}
+      
     </div>
   );
 }
