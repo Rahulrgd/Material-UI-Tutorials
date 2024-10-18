@@ -16,6 +16,7 @@ import ListComponents from "./component/ListComponents";
 import Accord from "./component/Accord";
 import DrawerMenu from "./component/DrawerMenu";
 import BasicTable from "./component/BasicTable";
+import Grids from "./component/Grids";
 
 function App() {
   const [values, setValues] = useState(0);
@@ -45,8 +46,9 @@ function App() {
         {/* <Containers/> */}
         {/* <ListComponents/> */}
         {/* <Accord/> */}
-        <DrawerMenu/>
+        {/* <DrawerMenu/> */}
         <BasicTable/>
+        <Grids/>
       </div>
     </div>
   );
